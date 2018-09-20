@@ -2,14 +2,16 @@
 <html>
 <head>
   <title>ohmods</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" type="text/css" href="css/fullpage.css" />
+  <script src="js/fullpage.js"></script>
 </head>
 
 <body>
-  <div class="container">
-
+  <div id="container">
     <!-- YEAR 1 -->
-    <div class="fullscreen year1">
+    <div class="fullscreen year1 section">
         <table>
           <tr>
             <td rowspan="6" class="header-table">
@@ -72,7 +74,7 @@
       </div>
 
       <!-- YEAR 2 -->
-      <div class="fullscreen year2">
+      <div class="fullscreen year2 section">
           <table>
             <tr>
               <td rowspan="7" class="header-table">
@@ -128,7 +130,7 @@
         </div>
 
       <!-- YEAR 3 -->
-      <div class="fullscreen year3">
+      <div class="fullscreen year3 section">
           <table>
             <tr>
               <td rowspan="7" class="header-table">
@@ -184,6 +186,12 @@
           </table>
         </div>
   </div>
+  <script>
+      $(document).ready(function() {
+          $('#container').fullpage();
+      });
+  </script>
 </body>
+
 
 </html>
