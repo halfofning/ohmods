@@ -29,13 +29,6 @@ body, html {
     margin: 0 auto;
 }
 
-/* YEAR 1 */
-
-
-/* YEAR 2 */
-
-/* YEAR 3 */
-
 /* Title Styles */
 .title {
     text-align: left;
@@ -56,21 +49,15 @@ body, html {
     font-size: 1.8em;
 }
 
-/* #logo {
-    margin-left: 50px;
-    padding-top: 23px;
-    width: 115px;
-    position: absolute;
-} */
-
 /* Table Styles */
 table {
     height: 100vh;
+    width: 100vw;
 }
 
 table, th, td {
-    /* border: 1px solid #aaa; */
-    border-collapse: collapse;
+    /* border: 1px solid #aaa;
+    border-collapse: collapse; */
     margin: 0;
 }
 
@@ -80,9 +67,23 @@ td {
 
 .header-table {
     width: 25%;
-    background-color: #2D3047;
     color: #fff;
     padding: 40px;
+}
+
+/* YEAR 1 */
+.year1 .header-table {
+    background-color: #2D3047;
+}
+
+/* YEAR 2 */
+.year2 .header-table {
+    background-color: #462255;
+}
+
+/* YEAR 3 */
+.year3 .header-table {
+    background-color: #465775;
 }
 
 .header-table h1 {
@@ -98,11 +99,12 @@ td {
     font-size: 1.8em;
 }
 
-.last-row {
+/* YEAR 1 */
+.year1 .last-row {
     height: 5em;
 }
 
-.img-mod {
+.year1 .img-mod {
     max-width: 95%;
     display: block;
     margin-left: auto;
@@ -110,6 +112,23 @@ td {
     text-align: center;
 }
 
-.whitespace-col {
+.year1 .whitespace-col {
+    width: 20px;
+}
+
+/* YEAR 2 AND 3 */
+.year2 .last-row, .year3 .last-row {
+    height: 3em;
+}
+
+.year2 .img-mod, .year3 .img-mod {
+    max-width: 90%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.year2 .whitespace-col, .year3 .whitespace-col  {
     width: 20px;
 }
