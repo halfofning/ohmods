@@ -19,18 +19,161 @@
 }
 
 /* HTML and BODY */
-body, html {
+body {
     margin: 0 auto;
     font-family: "Apercu-Regular";
 }
 
-.fullscreen {
+#container {
+    height: 100vh;
+}
+
+#sidebar img {
     height: 100vh;
     margin: 0 auto;
+    float: left;
+}
+
+#side-content {
+    margin-left: 470px;
 }
 
 /* Title Styles */
-.title {
+#title {
+    margin-top: -26px;
+}
+
+#title h1 {
+    font-family: "Apercu-Bold";
+    font-size: 100px;
+    margin-bottom: 0;
+    letter-spacing: 1px;
+    line-height: 110px;
+    margin-top: 26px;
+    padding-top: 26px;
+}
+
+#title h3 {
+    font-weight: 100;
+    text-align: left;
+    margin-top: -20px;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+/* FILTER BUTTONS */
+.btn {
+  font-family: "Apercu-Bold";
+  display: inline-block;
+  background-color: #fff;
+  padding: 0.5em 0;
+  border: 2px solid #FF5A5F;
+  border-radius: 8px;
+  color: #FF5A5F;
+  font-size: 18px;
+  cursor: pointer;
+  outline: none;
+  width: 210px;
+  margin-right: 5px;
+}
+
+.btn:active, .btn.is-checked {
+  color: #fff;
+  background-color: #FF5A5F;
+}
+
+.btn .is-checked {
+  color: #fff;
+  background-color: #FF5A5F;
+}
+
+.filter-group {
+  display: inline-block;
+  margin-top: -15px;
+  padding-bottom: 15px;
+}
+
+.filter-group h3 {
+  font-family: "Apercu-Bold";
+  display: inline-block;
+  margin-right: 20px;
+  font-size: 22px;
+  color: #FF5A5F;
+}
+
+.filter-group .btn-group {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+/* MODULES CONTENT */
+.module-container {
+  overflow: auto;
+  white-space: nowrap;
+  height: 215px;
+  margin-bottom: 5px;
+  overflow: scroll;
+}
+
+.module-bg {
+    width: 210px;
+    padding: 0 5px;
+}
+
+
+
+
+
+/* ul, li {
+  list-style: none;
+}
+
+.tg-list {
+    text-align: center;
+    display: flex;
+}
+
+.tg-list-item {
+    border: 2px solid #FF5A5F;
+    border-radius: 8px;
+}
+
+.tgl {
+    display: none;
+}
+
+.tgl + .tgl-btn {
+    display: block;
+    width: 182px;
+    height: 35px;
+    cursor: pointer;
+    font-family: "Apercu-Bold";
+    border-radius: 5px;
+    margin: 0 auto;
+}
+
+.tgl-filter + .tgl-btn {
+    transition: all .2s ease;
+    color: #FF5A5F;
+}
+
+.tgl-filter + .tgl-btn:after, .tgl-filter + .tgl-btn:before {
+    transition: all .2s ease;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+}
+
+.tgl-filter:checked + .tgl-btn {
+    background-color: #FF5A5F;
+    color: #fff;
+    border-radius: 5px;
+} */
+
+
+
+/* Title Styles */
+/* .title {
     text-align: left;
     padding-left: 35px;
 }
@@ -48,18 +191,18 @@ body, html {
     text-align: left;
     margin-top: 0;
     font-size: 1.8em;
-}
+} */
 
 /* Table Styles */
-table {
+/* table {
     height: 100vh;
     width: 100vw;
 }
 
 table, th, td {
-    /* border: 1px solid #aaa;
-    border-collapse: collapse; */
-    margin: 0;
+    border: 1px solid #aaa;
+    border-collapse: collapse;
+    margin: 0 auto;
 }
 
 td {
@@ -70,26 +213,26 @@ td {
     width: 25%;
     color: #fff;
     padding: 40px;
-}
+} */
 
 /* YEAR 1 */
-.year1 .header-table {
+/* .year1 .header-table {
     background-color: #2D3047;
-}
+} */
 
 /* YEAR 2 */
-.year2 .header-table {
+/* .year2 .header-table {
     background-color: #462255;
-}
+} */
 
 /* YEAR 3 */
-.year3 .header-table {
+/* .year3 .header-table {
     background-color: #465775;
 }
 
 .header-table h1 {
     font-family: "Apercu-Bold";
-    margin-bottom: 5px;
+    margin-bottom: 0px;
     font-size: 3.8em;
     letter-spacing: 2px;
 }
@@ -98,10 +241,10 @@ td {
     margin-top: 0;
     font-weight: 100;
     font-size: 1.8em;
-}
+} */
 
 /* YEAR 1 */
-.year1 .last-row {
+/* .year1 .last-row {
     height: 5em;
 }
 
@@ -115,10 +258,10 @@ td {
 
 .year1 .whitespace-col {
     width: 20px;
-}
+} */
 
 /* YEAR 2 AND 3 */
-.year2 .last-row, .year3 .last-row {
+/* .year2 .last-row, .year3 .last-row {
     height: 3em;
 }
 
@@ -132,10 +275,10 @@ td {
 
 .year2 .whitespace-col, .year3 .whitespace-col  {
     width: 20px;
-}
+} */
 
 /* MODAL WINDOW */
-#modal_wrapper.overlay::before {
+/* #modal_wrapper.overlay::before {
     content: "";
     width: 100%;
     height: 100%;
@@ -158,7 +301,7 @@ td {
     padding: 0px 20px;
     background: #fff;
     border-radius: 32.6px;
-    box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 30px 5px rgba(0, 0, 0, 0.2);
     padding-bottom: 20px;
     padding-top: 0px;
 }

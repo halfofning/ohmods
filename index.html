@@ -4,14 +4,67 @@
   <title>ohmods</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" type="text/css" href="css/fullpage.css" />
-  <script src="js/fullpage.js"></script>
+  <script src="js/toggle.js"></script>
+  <script src="images/storage.js"></script>
 </head>
 
 <body>
   <div id="container">
+    <div id="sidebar">
+        <img src="images/sidebar.jpg" alt="test"/>
+    </div>
+    <div id="side-content">
+
+      <!-- TITLE -->
+      <div id="title">
+        <h1>DIPLOMA IN INFORMATION TECHNOLOGY (N54)</h1><br>
+        <h3>Find out more about the modules we take in this course!</h3>
+      </div>
+
+      <!-- FILTERS AND TAGS -->
+      <div class="filters">
+        <div class="filter-group">
+          <div class="btn-group js-radio-button-group">
+            <h3>FILTER</h3>
+            <button class="btn">#personalDevelopment</button>
+            <button class="btn">#businessIT</button>
+            <button class="btn">#dataAnalytics</button>
+            <button class="btn">#salesAndMarketing</button>
+            <button class="btn">#solutionsArchitect</button>
+            <button class="btn">#infoSecurity</button>
+            <button class="btn">#softwareEngineering</button>
+            <button class="btn">#webDevelopment</button>
+            <button class="btn">#mobileDevelopment</button>
+            <button class="btn">#gamesDevelopment</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="module-container">
+        <div id="year1-content">
+
+        </div>
+      </div>
+      <div class="module-container">
+        <div id="year2-content">
+
+        </div>
+      </div>
+      <div class="module-container">
+        <div id="year3-content">
+
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+
+
+
     <!-- YEAR 1 -->
-    <div class="fullscreen year1 section">
+    <!-- <div class="fullscreen year1 section">
         <table>
           <tr>
             <td rowspan="6" class="header-table">
@@ -71,10 +124,10 @@
             </td>
           </tr>
         </table>
-      </div>
+      </div> -->
 
       <!-- YEAR 2 -->
-      <div class="fullscreen year2 section">
+      <!-- <div class="fullscreen year2 section">
           <table>
             <tr>
               <td rowspan="7" class="header-table">
@@ -127,10 +180,10 @@
               </td>
             </tr>
           </table>
-        </div>
+        </div> -->
 
       <!-- YEAR 3 -->
-      <div class="fullscreen year3 section">
+      <!-- <div class="fullscreen year3 section">
           <table>
             <tr>
               <td rowspan="7" class="header-table">
@@ -184,59 +237,6 @@
               </td>
             </tr>
           </table>
-      </div>
-
-      <!-- MODAL -->
-      <div id="modal_wrapper"></div>
-      <div id="modal_window">
-          <div id="right-align">
-              <a class="btnClose" href="#"><img class="btnClose" src="images/modal/close-button.png" alt="close"/></a>
-          </div>
-          <div id="left-align">
-
-            <!-- YEAR 1 MODALS -->
-            <div id="modal-fp1">
-              <img class="card" src="images/modal/1-FP1.png" alt="FP1"/>
-            </div>
-            <!-- <div id="modal-cm">
-              <img class="card" src="images/modal/1-CM.png" alt="CM"/>
-            </div>
-            <div id="modal-eis">
-              <img class="card" src="images/modal/1-EIS.png" alt="EIS"/>
-            </div>
-            <div id="modal-csf">
-              <img class="card" src="images/modal/1-CSF.png" alt="CSF"/>
-            </div>
-            <div id="modal-prg1">
-              <img class="card" src="images/modal/1-PRG1.png" alt="PRG1"/>
-            </div>
-            <div id="modal-db">
-              <img class="card" src="images/modal/1-DB.png" alt="DB"/>
-            </div>
-            <div id="modal-fed">
-              <img class="card" src="images/modal/1-FED.png" alt="FED"/>
-            </div>
-            <div id="modal-osfnf">
-              <img class="card" src="images/modal/1-OSFNF.png" alt="OSFNF"/>
-            </div>
-            <div id="modal-p1">
-              <img class="card" src="images/modal/1-P1.png" alt="P1"/>
-            </div>
-            <div id="modal-prg2">
-              <img class="card" src="images/modal/1-PRG2.png" alt="PRG2"/>
-            </div> -->
-
-            <!-- YEAR 2 MODALS -->
-
-            <!-- YEAR 3 MODALS -->
-          </div>
-      </div>
-  </div>
-  <script>
-      $(document).ready(function() {
-          $('#container').fullpage();
-      });
-  </script>
-  <script src="js/popup.js"></script>
+      </div> -->
 </body>
 </html>
