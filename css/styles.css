@@ -35,30 +35,30 @@ body {
 }
 
 #side-content {
-    margin-left: 470px;
+    margin-left: 630px;
 }
 
 /* Title Styles */
 #title {
-    margin-top: -26px;
+    margin-top: -40px;
 }
 
 #title h1 {
     font-family: "Apercu-Bold";
-    font-size: 100px;
+    font-size: 140px;
     margin-bottom: 0;
     letter-spacing: 1px;
-    line-height: 110px;
-    margin-top: 26px;
-    padding-top: 26px;
+    line-height: 145px;
+    margin-top: 40px;
+    padding-top: 37px;
 }
 
 #title h3 {
     font-weight: 100;
     text-align: left;
     margin-top: -20px;
-    font-size: 30px;
-    margin-bottom: 10px;
+    font-size: 40px;
+    margin-bottom: 14px;
 }
 
 /* FILTER BUTTONS */
@@ -67,13 +67,13 @@ body {
   display: inline-block;
   background-color: #fff;
   padding: 0.5em 0;
-  border: 2px solid #FF5A5F;
-  border-radius: 8px;
+  border: 3px solid #FF5A5F;
+  border-radius: 12px;
   color: #FF5A5F;
-  font-size: 18px;
+  font-size: 23px;
   cursor: pointer;
   outline: none;
-  width: 210px;
+  width: 300px;
   margin-right: 5px;
 }
 
@@ -89,15 +89,15 @@ body {
 
 .filter-group {
   display: inline-block;
-  margin-top: -15px;
   padding-bottom: 15px;
+  margin-bottom: 12px;
 }
 
 .filter-group h3 {
   font-family: "Apercu-Bold";
   display: inline-block;
   margin-right: 20px;
-  font-size: 22px;
+  font-size: 25px;
   color: #FF5A5F;
 }
 
@@ -110,16 +110,72 @@ body {
 .module-container {
   overflow: auto;
   white-space: nowrap;
-  height: 215px;
-  margin-bottom: 5px;
+  height: 280px;
+  margin-bottom: 10px;
   overflow: scroll;
+  position: relative;
+  top: 0;
+  left: 0;
 }
 
 .module-bg {
-    width: 210px;
+    width: 280px;
     padding: 0 5px;
+    /* transform-style: preserve-3d; */
+    transition: all 0.8s ease;
+    perspective: 1000px;
+    position: relative;
 }
 
+.module-img {
+    height: 130px;
+    width: 8%;
+    position: absolute;
+    z-index: 10;
+    top: 25%;
+    margin-left: -222px;
+    /* border: 1px solid red; */
+}
+
+.module-name {
+    width: 210px;
+}
+
+/* THE PSUEDO CLASS CONTROLS THE FLIP ON MOUSEOVER AND MOUSEOUT */
+/* .module-bg:hover {
+  transform: rotateY(180deg);
+} */
+
+
+/* THE FRONT FACE OF THE CARD, WHICH SHOWS BY DEFAULT */
+ /* .thefront{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  backface-visibility: hidden;
+  overflow: hidden;
+  background: #ffc728;
+  color: #000;
+} */
+
+/* THE BACK FACE OF THE CARD, WHICH SHOWS ON CLICK */
+/* .theback {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  backface-visibility: hidden;
+  overflow: hidden;
+  background: #fafafa;
+  color: #333;
+  text-align: center;
+  transform: rotateY(180deg);
+} */
 
 
 

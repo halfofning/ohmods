@@ -182,61 +182,61 @@ var year1Modules = [
   {
     name: "Fundamentals of IT Professionals I",
     description: "A broad introduction to the field of IT by exploring the roles, professional practice, ethical expectations and career development paths of IT professionals.",
-    image: "fp1.png",
+    image: "images/fp1.svg",
     tags: ["personaldev"]
   },
   {
     name: "Computing Mathematics",
     description: "This module introduces the basic concepts of relations and functions, matrices, statistical methods and relevant applications.",
-    image: "cm.png",
+    image: "images/cm.svg",
     tags: [""]
   },
   {
     name: "Enterprise Information Systems",
     description: "This module introduces students to the different components that build up an enterprise information system.",
-    image: "eis.png",
+    image: "images/eis.svg",
     tags: ["businessIT"]
   },
   {
     name: "Cyber Security Fundamentals",
     description: "This module provides an overview of the domains of cyber security to help develop an understanding of its importance in today’s digital world.",
-    image: "csf.png",
+    image: "images/csf.svg",
     tags: ["infoSecurity"]
   },
   {
     name: "Programming I",
     description: "This module introduces the fundamentals of programming and how to develop programs using appropriate problem solving techniques in a modular style.",
-    image: "prg1.png",
+    image: "images/prg1.svg",
     tags: [""]
   },
   {
     name: "Databases",
     description: "This module introduces students to the underlying concepts of database systems and how to model and design database systems that reflect business requirements.",
-    image: "db.png",
+    image: "images/db.svg",
     tags: [""]
   },
   {
     name: "Front End Development",
     description: "This module teaches the fundamental skills required to develop responsive websites that are optimised for mobile and desktop viewing.",
-    image: "fed.png",
+    image: "images/fed.svg",
     tags: [""]
   },
   {
     name: "Operating Systems and Networking Fundamentals",
     description: "This module focuses on the fundamentals and principles of operating systems and explains what they do.",
-    image: "osfnf.png",
+    image: "images/osfnf.svg",
     tags: [""]
   },
   {
     name: "Portfolio I",
     description: "This module provides the opportunity to apply the knowledge and skills gained from the various modules in the course to date, and explore topics in IT that they have a personal interest.",
-    image: "p1.png",
+    image: "images/p1.svg",
     tags: [""]
   },
   {
     name: "Programming II",
     description: "This module provides opportunities for the students to develop medium-scale applications based on the Object-Oriented (OO) approach.",
-    image: "prg2.png",
+    image: "images/prg2.svg",
     tags: [""]
   },
 ];
@@ -246,43 +246,43 @@ var year2Modules = [
   {
     name: "Fundamentals of IT Professionals II",
     description: "This module gives a course-based experience in which students can engage with the local community and industry.",
-    image: "fp2.png",
+    image: "images/fp2.svg",
     tags: [""]
   },
   {
     name: "Object Oriented Analysis and Design",
     description: "This module leverages the skills acquired in PRG2 to introduce software design, so that students experience the full cycle of software development.",
-    image: "ooad.png",
+    image: "images/ooad.svg",
     tags: [""]
   },
   {
     name: "Web Application Development",
     description: "This module provides students with the knowledge and skills needed to develop web applications and web application protocol interface (API).",
-    image: "web.png",
+    image: "images/web.svg",
     tags: [""]
   },
   {
     name: "Fundamentals of IT Professionals III",
     description: "This module provides a stepping stone to the students in their IT career. They are given an insight into the infocomm industries.",
-    image: "fp3.png",
+    image: "images/fp3.svg",
     tags: [""]
   },
   {
     name: "Full Stack Development",
     description: "This module aims to provide opportunities for students to be part of a software development team working on both back-end and front-end technologies.",
-    image: "fsd.png",
+    image: "images/fsd.svg",
     tags: [""]
   },
   {
     name: "Portfolio II",
     description: "This module builds on the previous module Portfolio I. Students may choose to undertake a real life IT project, a competition-based project or a research and development project.",
-    image: "p2.png",
+    image: "images/p2.svg",
     tags: [""]
   },
   {
     name: "User Experience",
     description: "This module focuses on the principles and techniques for designing good user experience in software applications and other products such as ATMs, kiosks, etc.",
-    image: "ux.png",
+    image: "images/ux.svg",
     tags: [""]
   },
 ]
@@ -523,6 +523,11 @@ function displayYear1Modules() {
         img.src = backgrounds[i].image;
         img.setAttribute("class", "module-bg");
         document.getElementById('year1-content').appendChild(img);
+
+        var img1 = new Image();
+        img1.src = year1Modules[i].image;
+        img1.setAttribute("class", "module-img");
+        document.getElementById('year1-content').appendChild(img1);
     }
 }
 
@@ -532,6 +537,11 @@ function displayYear2Modules() {
       img.src = backgrounds[i].image;
       img.setAttribute("class", "module-bg");
       document.getElementById('year2-content').appendChild(img);
+
+      var img1 = new Image();
+      img1.src = year2Modules[i].image;
+      img1.setAttribute("class", "module-img");
+      document.getElementById('year2-content').appendChild(img1);
   }
 }
 
