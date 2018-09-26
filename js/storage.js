@@ -40,7 +40,7 @@ var originalModules = [
   // YEAR 1 CORE MODULES
   {
     name: "Fundamentals of IT Professionals I",
-    description: "A broad introduction to the field of IT by exploring the roles, professional practice, ethical expectations and career development paths of IT professionals.",
+    description: "A broad introduction to the field of IT by exploring the roles and professional practice of IT professionals.",
     image: "images/year1/fp1.svg",
     tags: [""],
     year: "1"
@@ -54,7 +54,7 @@ var originalModules = [
   },
   {
     name: "Enterprise Information Systems",
-    description: "This module introduces students to the different components that build up an enterprise information system.",
+    description: "This module introduces the different components that build up an enterprise information system.",
     image: "images/year1/eis.svg",
     tags: [""],
     year: "1"
@@ -88,22 +88,22 @@ var originalModules = [
     year: "1"
   },
   {
-    name: "Operating Systems and Networking Fundamentals",
-    description: "This module focuses on the fundamentals and principles of operating systems and explains what they do.",
+    name: "Operating Systems & Networking Fundamentals",
+    description: "This module focuses on the fundamentals and principles of operating systems.",
     image: "images/year1/osfnf.svg",
     tags: [""],
     year: "1"
   },
   {
     name: "Portfolio I",
-    description: "This module provides the opportunity to apply the knowledge and skills gained from the various modules in the course to date, and explore topics in IT that they have a personal interest.",
+    description: "This module provides the opportunity to apply the knowledge and skills gained from the various modules, and explore topics in IT that they have a personal interest.",
     image: "images/year1/p1.svg",
     tags: [""],
     year: "1"
   },
   {
     name: "Programming II",
-    description: "This module provides opportunities for the students to develop medium-scale applications based on the Object-Oriented (OO) approach.",
+    description: "This module provides opportunities for the students to develop medium-scale applications based on the Object-Oriented approach.",
     image: "images/year1/prg2.svg",
     tags: [""],
     year: "1"
@@ -118,7 +118,7 @@ var originalModules = [
     year: "2"
   },
   {
-    name: "Object Oriented Analysis and Design",
+    name: "Object Oriented Analysis & Design",
     description: "This module leverages the skills acquired in PRG2 to introduce software design, so that students experience the full cycle of software development.",
     image: "images/year2/ooad.svg",
     tags: [""],
@@ -178,7 +178,7 @@ var originalModules = [
   },
   {
     name: "Descriptive Analysis",
-    description: "This module provides students with the knowledge and skills needed to develop web applications and web application protocol interface (API).",
+    description: "",
     image: "images/year3/da.png",
     tags: [""],
     year: "3"
@@ -200,14 +200,14 @@ var originalModules = [
 
   // AREA OF INTEREST: CLOUD COMPUTING
   {
-    name: "Cloud Architecture and Technologies",
+    name: "Cloud Architecture & Technologies",
     description: "",
     image: "images/year3/cat.png",
     tags: [""],
     year: "3"
   },
   {
-    name: "Designing and Managing Cloud Databases",
+    name: "Designing & Managing Cloud Databases",
     description: "",
     image: "images/year3/dmcd.png",
     tags: [""],
@@ -221,7 +221,7 @@ var originalModules = [
     year: "3"
   },
   {
-    name: "Virtualisation and Data Centre Management",
+    name: "Virtualisation & Data Centre Management",
     description: "",
     image: "images/year3/vdcm.png",
     tags: [""],
@@ -230,7 +230,7 @@ var originalModules = [
 
   // AREA OF INTEREST: ENTERPRISE SOLUTIONING
   {
-    name: "Business Process Modelling and Development",
+    name: "Business Process Modelling & Development",
     description: "",
     image: "images/year3/bpmd.png",
     tags: [""],
@@ -297,7 +297,7 @@ var originalModules = [
     year: "3"
   },
   {
-    name: "Infocomm Sales and Marketing Strategies",
+    name: "Infocomm Sales & Marketing Strategies",
     description: "",
     image: "images/year3/isms.png",
     tags: [""],
@@ -327,7 +327,7 @@ var originalModules = [
     year: "3"
   },
   {
-    name: "Mobile Device Security and Forensics",
+    name: "Mobile Device Security & Forensics",
     description: "",
     image: "images/year3/mdsf.png",
     tags: [""],
@@ -336,14 +336,14 @@ var originalModules = [
 
   // AREA OF INTEREST: SOLUTION ARCHITECT
   {
-    name: "Advanced Object-Oriented Analysis and Design",
+    name: "Advanced Object-Oriented Analysis & Design",
     description: "",
     image: "images/year3/aooad.png",
     tags: [""],
     year: "3"
   },
   {
-    name: "Data Structures and Algorithms",
+    name: "Data Structures & Algorithms",
     description: "",
     image: "images/year3/dsa.png",
     tags: [""],
@@ -388,26 +388,12 @@ var originalModules = [
   }
 ];
 
-// Returns the module information that contain the relevant tags.
+// Returns all module information.
 function displayAllModules() {
   for (var i = 0; i < originalModules.length; i++) {
-    var year1 = [];
-    var year2 = [];
-    var year3 = [];
-
-    if (originalModules[i].year == "1") {
-      year1.push(i);
-    }
-    else if (originalModules[i].year == "2") {
-      year2.push(i);
-    }
-    else {
-      year3.push(i);
-    }
 
     // Create a div containing the contents of the front card
     var moduleFrontContentDiv = document.createElement("div");
-
     // Create a div containing the contents of the back card
     var moduleBackContentDiv = document.createElement("div");
 
@@ -457,8 +443,9 @@ function displayAllModules() {
     moduleDiv.appendChild(img)
 
     // ------------ BACK CONTENTS ------------
-    // Create a div containing the module name
+    // Create a div containing the module name and another containing module desc
     var moduleNameDiv1 = document.createElement("div");
+    var moduleDescription = document.createElement("div");
 
     // Adding the title text
     var node1 = document.createElement("p");
@@ -470,8 +457,21 @@ function displayAllModules() {
     moduleNameDiv1.appendChild(node1);
     moduleNameDiv1.setAttribute("class", "module-name-back-div");
 
-    // Adding the title text div (moduleNameDiv) to moduleBackContentDiv
+    // Adding the description text
+    var node2 = document.createElement("p");
+    var textnode2 = document.createTextNode(originalModules[i].description);
+    node2.appendChild(textnode2);
+    node2.setAttribute("class", "module-desc");
+
+    // Append the description text to moduleDescription
+    moduleDescription.appendChild(node2);
+    moduleDescription.setAttribute("class", "module-desc-div");
+
+    // Adding the title text div (moduleNameDiv) and description text to moduleBackContentDiv
     moduleBackContentDiv.appendChild(moduleNameDiv1);
+    moduleBackContentDiv.appendChild(moduleDescription);
+
+
 
     // Adding moduleBackContentDiv into moduleDiv
     moduleBackContentDiv.setAttribute("class", "module-back-content-div");
@@ -490,17 +490,22 @@ function displayAllModules() {
   }
 }
 
+// Flips each module card on click.
 function flipCards() {
   // Add "is-flipped" class to all cards that are clicked.
   $('.module-div').click(function(event) {
     var $target = $(event.currentTarget);
     $target.toggleClass('is-flipped');
 
+    // Set timer to 15 seconds
     setTimeout(function() {
       $target.removeClass("is-flipped");
-    }, 15000);
+    }, 18000);
   });
 }
+
+// Slow scrolling and looping of each years' modules
+function scrollModules() {}
 
 // Returns the modules that contain the relevant tags.
 function getModules(tags) {

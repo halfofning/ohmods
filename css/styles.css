@@ -40,25 +40,25 @@ body {
 
 /* Title Styles */
 #title {
-  margin-top: -40px;
+  margin-top: -65px;
 }
 
 #title h1 {
   font-family: "Apercu-Bold";
-  font-size: 140px;
+  font-size: 145px;
   margin-bottom: 0;
   letter-spacing: 1px;
-  line-height: 145px;
-  margin-top: 40px;
-  padding-top: 37px;
+  line-height: 160px;
+  margin-top: 65px;
+  padding-top: 65px;
 }
 
 #title h3 {
-font-weight: 100;
-text-align: left;
-margin-top: -20px;
-font-size: 40px;
-margin-bottom: 14px;
+  font-weight: 100;
+  text-align: left;
+  margin-top: -15px;
+  font-size: 40px;
+  margin-bottom: -5px;
 }
 
 /* FILTER BUTTONS */
@@ -110,7 +110,7 @@ margin-bottom: 14px;
 .module-container {
   overflow: auto;
   white-space: nowrap;
-  height: 285px;
+  height: 305px;
   margin-bottom: 5px;
   overflow: scroll;
 }
@@ -129,11 +129,12 @@ margin-bottom: 14px;
 }
 
 .module-bg {
-  width: 280px;
+  width: 303px;
   padding: 0 5px;
   margin: 0 auto;
 }
 
+/* FRONT CONTENT */
 .module-front-content-div {
   display: inline-block;
   top: 52%;
@@ -143,7 +144,7 @@ margin-bottom: 14px;
 }
 
 .module-img {
-  height: 130px;
+  height: 140px;
   z-index: 100;
   margin: 0 auto;
   display: block;
@@ -151,7 +152,7 @@ margin-bottom: 14px;
 }
 
 .module-name-div {
-  width: 260px;
+  width: 280px;
   display: block;
   margin: 0 auto;
   margin: -24px 0;
@@ -161,7 +162,7 @@ margin-bottom: 14px;
 
 .module-name {
   font-family: "Apercu-Bold";
-  font-size: 30px;
+  font-size: 32px;
   text-align: center;
   color: #fff;
 }
@@ -171,25 +172,42 @@ margin-bottom: 14px;
 	position: absolute;
 }
 
+/* BACK CONTENT */
 .module-back-content-div {
-  transform: translate(-100%) rotateY(-180deg);
+  transform: translate(-100%) rotateY(180deg);
   display: inline-block;
-  border: 10px solid blue;
   z-index: 20;
 }
 
 .module-name-back-div {
-  width: 260px;
+  width: 275px;
   white-space: pre-line;
+  margin: 0 auto;
+  margin-left: 17.5px;
 }
 
 .module-name-back {
   font-family: "Apercu-Bold";
-  font-size: 30px;
+  font-size: 32px;
   text-align: center;
   color: #fff;
+  padding-top: 2px;
 }
 
+.module-desc-div {
+  width: 260px;
+  height: 100%;
+  white-space: pre-line;
+  margin: 0 auto;
+  margin-top: -28px;
+  margin-left: 30px;
+  /* border: 1px solid blue; */
+}
+
+.module-desc {
+  font-size: 21px;
+  color: #fff;
+}
 
 
 /* ul, li {
