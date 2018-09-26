@@ -3,8 +3,3 @@ $('.filters').click(function(event) {
   var $target = $( event.currentTarget );
   $target.toggleClass('is-checked');
 });
-
-$( ".module-bg" ).click(function() {
-  var $target = $( event.currentTarget );
-  $target.toggleClass('flip');
-});

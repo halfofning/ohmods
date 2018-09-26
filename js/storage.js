@@ -1,5 +1,6 @@
 $(document).ready(function() {
     displayAllModules();
+    flipCards();
 });
 
 // All backgrounds
@@ -389,7 +390,7 @@ var originalModules = [
 
 // Returns the module information that contain the relevant tags.
 function displayAllModules() {
-  for(var i = 0; i < originalModules.length; i++) {
+  for (var i = 0; i < originalModules.length; i++) {
     var year1 = [];
     var year2 = [];
     var year3 = [];
@@ -407,6 +408,10 @@ function displayAllModules() {
     // Create a div containing the contents of the front card
     var moduleFrontContentDiv = document.createElement("div");
 
+    // Create a div containing the contents of the back card
+    var moduleBackContentDiv = document.createElement("div");
+
+    // ------------ FRONT CONTENTS ------------
     // Create a div containing the module name
     var moduleNameDiv = document.createElement("div");
 
@@ -451,7 +456,28 @@ function displayAllModules() {
     moduleDiv.appendChild(moduleFrontContentDiv);
     moduleDiv.appendChild(img)
 
-    // Append moduleFrontCardContentDiv to year1-content div
+    // ------------ BACK CONTENTS ------------
+    // Create a div containing the module name
+    var moduleNameDiv1 = document.createElement("div");
+
+    // Adding the title text
+    var node1 = document.createElement("p");
+    var textnode1 = document.createTextNode(originalModules[i].name);
+    node1.appendChild(textnode1);
+    node1.setAttribute("class", "module-name-back");
+
+    // Append the title text to moduleNameDiv
+    moduleNameDiv1.appendChild(node1);
+    moduleNameDiv1.setAttribute("class", "module-name-back-div");
+
+    // Adding the title text div (moduleNameDiv) to moduleBackContentDiv
+    moduleBackContentDiv.appendChild(moduleNameDiv1);
+
+    // Adding moduleBackContentDiv into moduleDiv
+    moduleBackContentDiv.setAttribute("class", "module-back-content-div");
+    moduleDiv.appendChild(moduleBackContentDiv);
+
+    // ------------ APPEND WHOLE DIV CONTENT ------------
     if (originalModules[i].year == "1") {
       document.getElementById('year1-content').appendChild(moduleDiv);
     }
@@ -462,6 +488,14 @@ function displayAllModules() {
       document.getElementById('year3-content').appendChild(moduleDiv);
     }
   }
+}
+
+function flipCards() {
+  // Add "is-flipped" class to all cards that are clicked.
+  $('.module-div').click(function(event) {
+    var $target = $(event.currentTarget);
+    $target.toggleClass('is-flipped');
+  });
 }
 
 // Returns the modules that contain the relevant tags.

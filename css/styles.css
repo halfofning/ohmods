@@ -1,64 +1,64 @@
 @font-face {
-    font-family: "Apercu-Regular";
-    src: url('../fonts/apercu/apercu_regular_pro.otf');
+  font-family: "Apercu-Regular";
+  src: url('../fonts/apercu/apercu_regular_pro.otf');
 }
 
 @font-face {
-    font-family: "Apercu-Bold";
-    src: url('../fonts/apercu/apercu_bold_pro.otf');
+  font-family: "Apercu-Bold";
+  src: url('../fonts/apercu/apercu_bold_pro.otf');
 }
 
 @font-face {
-    font-family: "Manrope-Regular";
-    src: url('../fonts/manrope/regular.otf');
+  font-family: "Manrope-Regular";
+  src: url('../fonts/manrope/regular.otf');
 }
 
 @font-face {
-    font-family: "Manrope-Bold";
-    src: url('../fonts/manrope/bold.otf');
+  font-family: "Manrope-Bold";
+  src: url('../fonts/manrope/bold.otf');
 }
 
 /* HTML and BODY */
 body {
-    margin: 0 auto;
-    font-family: "Apercu-Regular";
+  margin: 0 auto;
+  font-family: "Apercu-Regular";
 }
 
 #container {
-    height: 100vh;
+  height: 100vh;
 }
 
 #sidebar img {
-    height: 100vh;
-    margin: 0 auto;
-    float: left;
+  height: 100vh;
+  margin: 0 auto;
+  float: left;
 }
 
 #side-content {
-    margin-left: 630px;
+  margin-left: 630px;
 }
 
 /* Title Styles */
 #title {
-    margin-top: -40px;
+  margin-top: -40px;
 }
 
 #title h1 {
-    font-family: "Apercu-Bold";
-    font-size: 140px;
-    margin-bottom: 0;
-    letter-spacing: 1px;
-    line-height: 145px;
-    margin-top: 40px;
-    padding-top: 37px;
+  font-family: "Apercu-Bold";
+  font-size: 140px;
+  margin-bottom: 0;
+  letter-spacing: 1px;
+  line-height: 145px;
+  margin-top: 40px;
+  padding-top: 37px;
 }
 
 #title h3 {
-    font-weight: 100;
-    text-align: left;
-    margin-top: -20px;
-    font-size: 40px;
-    margin-bottom: 14px;
+font-weight: 100;
+text-align: left;
+margin-top: -20px;
+font-size: 40px;
+margin-bottom: 14px;
 }
 
 /* FILTER BUTTONS */
@@ -116,50 +116,80 @@ body {
 }
 
 .module-div {
-    display: inline-block;
-    margin: 0 auto;
-    position: relative;
+  display: inline-block;
+  margin: 0 auto;
+  position: relative;
+  cursor: pointer;
+  transition: 0.6s;
+  transform-style: preserve-3d;
+}
+
+.is-flipped {
+  transform: rotateY(-180deg);
 }
 
 .module-bg {
-    width: 280px;
-    padding: 0 5px;
-    margin: 0 auto;
+  width: 280px;
+  padding: 0 5px;
+  margin: 0 auto;
 }
 
 .module-front-content-div {
-    display: inline-block;
-    position: absolute;
-    top: 52%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
-    z-index: 10;
+  display: inline-block;
+  top: 52%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
 }
 
 .module-img {
-    height: 130px;
-    z-index: 100;
-    margin: 0 auto;
-    display: block;
-    padding-bottom: 5px;
+  height: 130px;
+  z-index: 100;
+  margin: 0 auto;
+  display: block;
+  padding-bottom: 5px;
 }
 
 .module-name-div {
-    width: 260px;
-    display: block;
-    margin: 0 auto;
-    margin: -24px 0;
-    z-index: 100;
-    white-space: pre-line;
+  width: 260px;
+  display: block;
+  margin: 0 auto;
+  margin: -24px 0;
+  z-index: 100;
+  white-space: pre-line;
 }
 
 .module-name {
-    font-family: "Apercu-Bold";
-    font-size: 30px;
-    text-align: center;
-    color: #fff;
+  font-family: "Apercu-Bold";
+  font-size: 30px;
+  text-align: center;
+  color: #fff;
 }
+
+.module-front-content-div, .module-back-content-div {
+  backface-visibility: hidden;
+	position: absolute;
+}
+
+.module-back-content-div {
+  transform: translate(-100%) rotateY(-180deg);
+  display: inline-block;
+  border: 10px solid blue;
+  z-index: 20;
+}
+
+.module-name-back-div {
+  width: 260px;
+  white-space: pre-line;
+}
+
+.module-name-back {
+  font-family: "Apercu-Bold";
+  font-size: 30px;
+  text-align: center;
+  color: #fff;
+}
+
 
 /* THE PSUEDO CLASS CONTROLS THE FLIP ON MOUSEOVER AND MOUSEOUT */
 /* .module-bg:hover {
