@@ -191,44 +191,6 @@ margin-bottom: 14px;
 }
 
 
-/* THE PSUEDO CLASS CONTROLS THE FLIP ON MOUSEOVER AND MOUSEOUT */
-/* .module-bg:hover {
-  transform: rotateY(180deg);
-} */
-
-
-/* THE FRONT FACE OF THE CARD, WHICH SHOWS BY DEFAULT */
- /* .thefront{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 10px;
-  backface-visibility: hidden;
-  overflow: hidden;
-  background: #ffc728;
-  color: #000;
-} */
-
-/* THE BACK FACE OF THE CARD, WHICH SHOWS ON CLICK */
-/* .theback {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 10px;
-  backface-visibility: hidden;
-  overflow: hidden;
-  background: #fafafa;
-  color: #333;
-  text-align: center;
-  transform: rotateY(180deg);
-} */
-
-
-
 
 /* ul, li {
   list-style: none;

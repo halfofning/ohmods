@@ -495,6 +495,10 @@ function flipCards() {
   $('.module-div').click(function(event) {
     var $target = $(event.currentTarget);
     $target.toggleClass('is-flipped');
+
+    setTimeout(function() {
+      $target.removeClass("is-flipped");
+    }, 15000);
   });
 }
 
