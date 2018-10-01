@@ -1,36 +1,37 @@
 $(document).ready(function() {
     displayAllModules();
     flipCards();
+    filterButtons();
 });
 
 // All backgrounds
 var backgrounds = [
   {
-    image: "images/orange.jpg",
+    image: "images/backgrounds/orange.jpg",
     color: "orange"
   },
   {
-    image: "images/darkblue.jpg",
+    image: "images/backgrounds/darkblue.jpg",
     color: "darkblue"
   },
   {
-    image: "images/lightblue.jpg",
+    image: "images/backgrounds/lightblue.jpg",
     color: "lightblue"
   },
   {
-    image: "images/turquoise.jpg",
+    image: "images/backgrounds/turquoise.jpg",
     color: "turquoise"
   },
   {
-    image: "images/pink.jpg",
+    image: "images/backgrounds/pink.jpg",
     color: "pink"
   },
   {
-    image: "images/darkgreen.jpg",
+    image: "images/backgrounds/darkgreen.jpg",
     color: "darkgreen"
   },
   {
-    image: "images/lightgreen.jpg",
+    image: "images/backgrounds/lightgreen.jpg",
     color: "lightgreen"
   }
 ]
@@ -126,7 +127,7 @@ var originalModules = [
   },
   {
     name: "Web Application Development",
-    description: "This module provides students with the knowledge and skills needed to develop web applications and web application protocol interface (API).",
+    description: "This module provides students with the skills needed to develop web applications and web application protocol interface (API).",
     image: "images/year2/web.svg",
     tags: [""],
     year: "2"
@@ -140,14 +141,14 @@ var originalModules = [
   },
   {
     name: "Full Stack Development",
-    description: "This module aims to provide opportunities for students to be part of a software development team working on both back-end and front-end technologies.",
+    description: "This module aims to provide opportunities for students to be part of a software development team.",
     image: "images/year2/fsd.svg",
     tags: [""],
     year: "2"
   },
   {
     name: "Portfolio II",
-    description: "This module builds on the previous module Portfolio I. Students may choose to undertake a real life IT project, a competition-based project or a research and development project.",
+    description: "Students may choose to undertake a real life IT project, a competition-based project or a research and development project.",
     image: "images/year2/p2.svg",
     tags: [""],
     year: "2"
@@ -164,227 +165,249 @@ var originalModules = [
   // AREA OF INTEREST: BUSINESS AND DATA ANALYTICS
   {
     name: "Big Data",
-    description: "",
-    image: "images/year3/bd.png",
+    description: "This module also covers the whole technology stack of Big Data: infrastructure, data management and analytics.",
+    image: "images/year3/bd.svg",
     tags: [""],
-    year: "3"
+    year: "3",
+    aoi: "Business and Data Analytics"
   },
   {
     name: "Data Visualisation",
-    description: "",
-    image: "images/year3/dv.png",
+    description: " This module covers the techniques for creating effective visualisations based on principles from graphic design, perceptual psychology, etc.",
+    image: "images/year3/dv.svg",
     tags: [""],
-    year: "3"
+    year: "3",
+    aoi: "Business and Data Analytics"
   },
   {
     name: "Descriptive Analysis",
-    description: "",
-    image: "images/year3/da.png",
+    description: "This module aims to teach students the descriptive analytics lifecycle.",
+    image: "images/year3/da.svg",
     tags: [""],
-    year: "3"
+    year: "3",
+    aoi: "Business and Data Analytics"
   },
   {
     name: "Predictive Analysis",
-    description: "",
-    image: "images/year3/pa.png",
+    description: "This module introduces students to the statistical techniques used to make predictions about future trends in business or financial services.",
+    image: "images/year3/pa.svg",
     tags: [""],
-    year: "3"
+    year: "3",
+    aoi: "Business and Data Analytics"
   },
   {
     name: "Quantitative Analysis",
-    description: "",
-    image: "images/year3/qa.png",
+    description: "This module aims to introduce students to the methods that are used to analyse and interpret business or financial data.",
+    image: "images/year3/qa.svg",
     tags: [""],
-    year: "3"
+    year: "3",
+    aoi: "Business and Data Analytics"
   },
 
   // AREA OF INTEREST: CLOUD COMPUTING
   {
     name: "Cloud Architecture & Technologies",
-    description: "",
-    image: "images/year3/cat.png",
+    description: "This module gives insight into the key concepts and technologies of cloud computing.",
+    image: "images/year3/cat.svg",
     tags: [""],
-    year: "3"
+    year: "3",
+    aoi: "Cloud Computing"
   },
   {
     name: "Designing & Managing Cloud Databases",
-    description: "",
-    image: "images/year3/dmcd.png",
+    description: "This module covers analysis, design and management of cloud database models.",
+    image: "images/year3/dmcd.svg",
     tags: [""],
-    year: "3"
+    year: "3",
+    aoi: "Cloud Computing"
   },
   {
     name: "Developing Cloud Applications",
-    description: "",
-    image: "images/year3/dca.png",
+    description: "This module covers the analysis of business and technical requirements of a cloud-based system.",
+    image: "images/year3/dca.svg",
     tags: [""],
-    year: "3"
+    year: "3",
+    aoi: "Cloud Computing"
   },
   {
     name: "Virtualisation & Data Centre Management",
-    description: "",
-    image: "images/year3/vdcm.png",
+    description: "This module introduces the foundations of virtualisation.",
+    image: "images/year3/vdcm.svg",
     tags: [""],
-    year: "3"
+    year: "3",
+    aoi: "Cloud Computing"
   },
 
   // AREA OF INTEREST: ENTERPRISE SOLUTIONING
   {
     name: "Business Process Modelling & Development",
-    description: "",
-    image: "images/year3/bpmd.png",
+    description: "This module equips students with the skills for modelling and analysing business processes.",
+    image: "images/year3/bpmd.svg",
     tags: [""],
-    year: "3"
+    year: "3",
+    aoi: "Enterprise Solutioning"
   },
   {
     name: "Customer Experience Management",
-    description: "",
-    image: "images/year3/cem.png",
+    description: "This module provides the knowledge of Customer Experience Management as a business strategy.",
+    image: "images/year3/cxm.svg",
     tags: [""],
-    year: "3"
+    year: "3",
+    aoi: "Enterprise Solutioning"
   },
   {
     name: "Enterprise Business Solutions",
-    description: "",
-    image: "images/year3/ebs.png",
+    description: "This module educates students on the importance of backend cloud-based enterprise business systems.",
+    image: "images/year3/ebs.svg",
     tags: [""],
-    year: "3"
+    year: "3",
+    aoi: "Enterprise Solutioning"
   },
 
   // AREA OF INTEREST: GAME PROGRAMMING
   {
     name: "Artificial Intelligence for Games",
-    description: "",
-    image: "images/year3/ai.png",
+    description: "This module introduces the various approaches for injecting intelligence into games.",
+    image: "images/year3/ai.svg",
     tags: [""],
-    year: "3"
+    year: "3",
+    aoi: "Game Programming"
   },
   {
     name: "Game Interactivity",
-    description: "",
-    image: "images/year3/gi.png",
+    description: "This module introduces game interactivity and the various game interaction devices to the students. Includes player profiling and psychology, measuring playability, etc.",
+    image: "images/year3/gi.svg",
     tags: [""],
-    year: "3"
+    year: "3",
+    aoi: "Game Programming"
   },
   {
     name: "Game Production",
-    description: "",
-    image: "images/year3/gpn.png",
+    description: "This module provides an overview of the game development process and introduces game design. Storytelling, game mechanics and level design will be covered.",
+    image: "images/year3/gpn.svg",
     tags: [""],
-    year: "3"
+    year: "3",
+    aoi: "Game Programming"
   },
   {
     name: "Gameplay Programming",
-    description: "",
-    image: "images/year3/gpp.png",
+    description: "This module presents fundamental concepts of game implementation and architecture.",
+    image: "images/year3/gpp.svg",
     tags: [""],
-    year: "3"
+    year: "3",
+    aoi: "Game Programming"
   },
   {
     name: "Maths for Games",
-    description: "",
-    image: "images/year3/mg.png",
+    description: "This module provides an in-depth examination of the various mathematical concepts that are relevant to games programming.",
+    image: "images/year3/mg.svg",
     tags: [""],
-    year: "3"
+    year: "3",
+    aoi: "Game Programming"
   },
 
   // AREA OF INTEREST: INFOCOMM SALES AND MARKETING
   {
     name: "Customer Decision Making & Negotiation Skills",
-    description: "",
-    image: "images/year3/cdmns.png",
+    description: "Students will be introduced to soft skills in understanding customer biases and concerns, etc.",
+    image: "images/year3/cdmns.svg",
     tags: [""],
-    year: "3"
+    year: "3",
+    aoi: "Infocomm Sales and Marketing"
   },
   {
     name: "Infocomm Sales & Marketing Strategies",
-    description: "",
-    image: "images/year3/isms.png",
+    description: "This module introduces students to the development of sales and marketing strategies, etc.",
+    image: "images/year3/isms.svg",
     tags: [""],
-    year: "3"
+    year: "3",
+    aoi: "Infocomm Sales and Marketing"
   },
   {
     name: "Infocomm Sales Life Cycle Management",
-    description: "",
-    image: "images/year3/islcm.png",
+    description: "This module introduces students to a customer’s ICT purchase decision making process, etc.",
+    image: "images/year3/islcm.svg",
     tags: [""],
-    year: "3"
+    year: "3",
+    aoi: "Infocomm Sales and Marketing"
   },
 
   // AREA OF INTEREST: MOBILE BUSINESS APPLICATION
   {
     name: "Mobile Applications Development",
-    description: "",
-    image: "images/year3/mad.png",
+    description: "This module focuses on the design & development of mobile applications.",
+    image: "images/year3/mad.svg",
     tags: [""],
-    year: "3"
+    year: "3",
+    aoi: "Mobile Business Application"
   },
   {
     name: "Mobile Applications Development II",
-    description: "",
-    image: "images/year3/mad2.png",
+    description: "This module will focus on the development of advanced applications.",
+    image: "images/year3/mad2.svg",
     tags: [""],
-    year: "3"
+    year: "3",
+    aoi: "Mobile Business Application"
   },
   {
     name: "Mobile Device Security & Forensics",
-    description: "",
-    image: "images/year3/mdsf.png",
+    description: "This module covers techniques and tools to extract digital evidence on mobile devices.",
+    image: "images/year3/mdsf.svg",
     tags: [""],
-    year: "3"
+    year: "3",
+    aoi: "Mobile Business Application"
   },
 
   // AREA OF INTEREST: SOLUTION ARCHITECT
   {
     name: "Advanced Object-Oriented Analysis & Design",
-    description: "",
-    image: "images/year3/aooad.png",
+    description: "This module introduces complex design artefacts needed to model & document softwares.",
+    image: "images/year3/aooad.svg",
     tags: [""],
-    year: "3"
+    year: "3",
+    aoi: "Solutions Architect"
   },
   {
     name: "Data Structures & Algorithms",
-    description: "",
-    image: "images/year3/dsa.png",
+    description: "This module provides students with skills to analyse, design and implement programmes involving data structures.",
+    image: "images/year3/dsa.svg",
     tags: [""],
-    year: "3"
+    year: "3",
+    aoi: "Solutions Architect"
   },
   {
     name: "eCommerce Applications Development",
-    description: "",
-    image: "images/year3/cad.png",
+    description: "This module aims to provide students with technical skills to develop eCommerce applications.",
+    image: "images/year3/cad.svg",
     tags: [""],
-    year: "3"
+    year: "3",
+    aoi: "Solutions Architect"
   },
   {
     name: "Secure Software Development",
-    description: "",
-    image: "images/year3/ssd.png",
+    description: "This module trains students to incorporate security throughout the entire process of software development.",
+    image: "images/year3/ssd.svg",
     tags: [""],
-    year: "3"
+    year: "3",
+    aoi: "Solutions Architect"
   },
 
   // GENERAL ELECTIVES
   {
-    name: "Capstone Project",
-    description: "",
-    image: "images/year3/cp.png",
-    tags: [""],
-    year: "3"
-  },
-  {
     name: "Emerging Trends in IT",
-    description: "",
-    image: "images/year3/eti.png",
+    description: "This module is designed to help students keep abreast of the latest IT developments.",
+    image: "images/year3/eti.svg",
     tags: [""],
-    year: "3"
+    year: "3",
+    aoi: "General"
   },
   {
     name: "Technopreneurship",
-    description: "",
-    image: "images/year3/tech.png",
+    description: "This module focuses on the processes and mechanisms by which new ideas and inventions can be commercialised in the market.",
+    image: "images/year3/tnp.svg",
     tags: [""],
-    year: "3"
+    year: "3",
+    aoi: "General"
   }
 ];
 
@@ -457,6 +480,16 @@ function displayAllModules() {
     moduleNameDiv1.appendChild(node1);
     moduleNameDiv1.setAttribute("class", "module-name-back-div");
 
+    // Adding the area of interest text
+    if (originalModules[i].aoi != null) {
+      var node3 = document.createElement("p");
+      var textnode3 = document.createTextNode(originalModules[i].aoi);
+      node3.appendChild(textnode3);
+      node3.setAttribute ("class", "module-aoi");
+
+      moduleDescription.appendChild(node3);
+    }
+
     // Adding the description text
     var node2 = document.createElement("p");
     var textnode2 = document.createTextNode(originalModules[i].description);
@@ -464,14 +497,13 @@ function displayAllModules() {
     node2.setAttribute("class", "module-desc");
 
     // Append the description text to moduleDescription
+    // moduleDescription.appendChild(node3);
     moduleDescription.appendChild(node2);
     moduleDescription.setAttribute("class", "module-desc-div");
 
     // Adding the title text div (moduleNameDiv) and description text to moduleBackContentDiv
     moduleBackContentDiv.appendChild(moduleNameDiv1);
     moduleBackContentDiv.appendChild(moduleDescription);
-
-
 
     // Adding moduleBackContentDiv into moduleDiv
     moduleBackContentDiv.setAttribute("class", "module-back-content-div");
@@ -506,6 +538,15 @@ function flipCards() {
 
 // Slow scrolling and looping of each years' modules
 function scrollModules() {}
+
+function filterButtons() {
+  // Add "is-checked" class to all buttons that are clicked.
+  $('.btn').click(function(event) {
+    var $target = $(event.currentTarget);
+    $target.toggleClass('is-checked');
+  });
+
+}
 
 // Returns the modules that contain the relevant tags.
 function getModules(tags) {

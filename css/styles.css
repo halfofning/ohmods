@@ -28,37 +28,61 @@ body {
   height: 100vh;
 }
 
-#sidebar img {
+#sidebar {
+    position: relative;
+}
+
+#sidebar-img {
   height: 100vh;
   margin: 0 auto;
   float: left;
 }
 
+#qr-code-div {
+  width: 300px;
+  float: left;
+  position: absolute;
+  text-align: center;
+  left: 145px;
+  top: 120px;
+}
+
+#qr-code {
+  border-radius: 20px;
+  width: 250px;
+}
+
+#qr-code-desc {
+  color: #fff;
+  white-space: pre-line;
+  font-size: 35px;
+}
+
 #side-content {
-  margin-left: 630px;
+  margin-left: 615px;
 }
 
 /* Title Styles */
 #title {
-  margin-top: -65px;
+  margin-top: -40px;
 }
 
 #title h1 {
   font-family: "Apercu-Bold";
-  font-size: 145px;
+  font-size: 135px;
   margin-bottom: 0;
   letter-spacing: 1px;
-  line-height: 160px;
-  margin-top: 65px;
-  padding-top: 65px;
+  line-height: 145px;
+  margin-top: 40px;
+  padding-top: 35px;
 }
 
 #title h3 {
-  font-weight: 100;
-  text-align: left;
-  margin-top: -15px;
-  font-size: 40px;
-  margin-bottom: -5px;
+font-weight: 100;
+text-align: left;
+margin-top: -20px;
+font-size: 35px;
+margin-bottom: 10px;
 }
 
 /* FILTER BUTTONS */
@@ -66,15 +90,16 @@ body {
   font-family: "Apercu-Bold";
   display: inline-block;
   background-color: #fff;
-  padding: 0.5em 0;
+  padding: 11px 0;
   border: 3px solid #FF5A5F;
   border-radius: 12px;
   color: #FF5A5F;
-  font-size: 23px;
+  font-size: 22px;
   cursor: pointer;
   outline: none;
   width: 300px;
   margin-right: 5px;
+  margin: 5px;
 }
 
 .btn:active, .btn.is-checked {
@@ -89,7 +114,7 @@ body {
 
 .filter-group {
   display: inline-block;
-  padding-bottom: 15px;
+  padding-bottom: 8px;
   margin-bottom: 12px;
 }
 
@@ -97,20 +122,25 @@ body {
   font-family: "Apercu-Bold";
   display: inline-block;
   margin-right: 20px;
-  font-size: 25px;
+  font-size: 30px;
   color: #FF5A5F;
 }
 
 .filter-group .btn-group {
   display: inline-block;
   margin-right: 20px;
+
+}
+
+.btn-group {
+  margin-top: 15px;
 }
 
 /* MODULES CONTENT */
 .module-container {
   overflow: auto;
   white-space: nowrap;
-  height: 305px;
+  height: 290px;
   margin-bottom: 5px;
   overflow: scroll;
 }
@@ -129,7 +159,7 @@ body {
 }
 
 .module-bg {
-  width: 303px;
+  width: 285px;
   padding: 0 5px;
   margin: 0 auto;
 }
@@ -144,7 +174,7 @@ body {
 }
 
 .module-img {
-  height: 140px;
+  height: 130px;
   z-index: 100;
   margin: 0 auto;
   display: block;
@@ -152,7 +182,7 @@ body {
 }
 
 .module-name-div {
-  width: 280px;
+  width: 260px;
   display: block;
   margin: 0 auto;
   margin: -24px 0;
@@ -162,7 +192,7 @@ body {
 
 .module-name {
   font-family: "Apercu-Bold";
-  font-size: 32px;
+  font-size: 30px;
   text-align: center;
   color: #fff;
 }
@@ -180,78 +210,40 @@ body {
 }
 
 .module-name-back-div {
-  width: 275px;
+  width: 260px;
   white-space: pre-line;
   margin: 0 auto;
-  margin-left: 17.5px;
+  margin-left: 11px;
+  /* border: 1px solid red; */
 }
 
 .module-name-back {
   font-family: "Apercu-Bold";
-  font-size: 32px;
+  font-size: 30px;
   text-align: center;
   color: #fff;
   padding-top: 2px;
 }
 
 .module-desc-div {
-  width: 260px;
+  width: 240px;
   height: 100%;
   white-space: pre-line;
   margin: 0 auto;
   margin-top: -28px;
-  margin-left: 30px;
-  /* border: 1px solid blue; */
+  margin-left: 23px;
 }
 
 .module-desc {
-  font-size: 21px;
+  font-size: 20px;
   color: #fff;
+  margin-top: -8px;
 }
 
-
-/* ul, li {
-  list-style: none;
+.module-aoi {
+  color: #fff;
+  font-size: 15px;
+  text-align: center;
+  font-style: italic;
+  letter-spacing: 1px;
 }
-
-.tg-list {
-    text-align: center;
-    display: flex;
-}
-
-.tg-list-item {
-    border: 2px solid #FF5A5F;
-    border-radius: 8px;
-}
-
-.tgl {
-    display: none;
-}
-
-.tgl + .tgl-btn {
-    display: block;
-    width: 182px;
-    height: 35px;
-    cursor: pointer;
-    font-family: "Apercu-Bold";
-    border-radius: 5px;
-    margin: 0 auto;
-}
-
-.tgl-filter + .tgl-btn {
-    transition: all .2s ease;
-    color: #FF5A5F;
-}
-
-.tgl-filter + .tgl-btn:after, .tgl-filter + .tgl-btn:before {
-    transition: all .2s ease;
-    width: 100%;
-    text-align: center;
-    color: #fff;
-}
-
-.tgl-filter:checked + .tgl-btn {
-    background-color: #FF5A5F;
-    color: #fff;
-    border-radius: 5px;
-} */
