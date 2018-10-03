@@ -195,7 +195,7 @@ var originalModules = [
     description: " This module covers the techniques for creating effective visualisations based on principles from graphic design, perceptual psychology, etc.",
     image: "images/year3/dv.svg",
     tags: ["data-analytics", "businessIT"],
-    year: "3",
+    year: "2",
     aoi: "Business and Data Analytics"
   },
   {
@@ -213,7 +213,7 @@ var originalModules = [
     description: "This module introduces students to the statistical techniques used to make predictions about future trends in business or financial services.",
     image: "images/year3/pa.svg",
     tags: ["data-analytics", "businessIT"],
-    year: "3",
+    year: "2",
     aoi: "Business and Data Analytics"
   },
   {
@@ -233,7 +233,7 @@ var originalModules = [
     description: "This module gives insight into the key concepts and technologies of cloud computing.",
     image: "images/year3/cat.svg",
     tags: ["cloud-comp"],
-    year: "3",
+    year: "2",
     aoi: "Cloud Computing"
   },
   {
@@ -280,7 +280,7 @@ var originalModules = [
     description: "This module provides the knowledge of Customer Experience Management as a business strategy.",
     image: "images/year3/cxm.svg",
     tags: ["etp-sol"],
-    year: "3",
+    year: "2",
     aoi: "Enterprise Solutioning"
   },
   {
@@ -318,7 +318,7 @@ var originalModules = [
     description: "This module provides an overview of the game development process and introduces game design. Storytelling, game mechanics and level design will be covered.",
     image: "images/year3/gpn.svg",
     tags: ["games-dev"],
-    year: "3",
+    year: "2",
     aoi: "Game Programming"
   },
   {
@@ -327,7 +327,7 @@ var originalModules = [
     description: "This module presents fundamental concepts of game implementation and architecture.",
     image: "images/year3/gpp.svg",
     tags: ["games-dev"],
-    year: "3",
+    year: "2",
     aoi: "Game Programming"
   },
   {
@@ -336,7 +336,7 @@ var originalModules = [
     description: "This module provides an in-depth examination of the various mathematical concepts that are relevant to games programming.",
     image: "images/year3/mg.svg",
     tags: ["games-dev"],
-    year: "3",
+    year: "2",
     aoi: "Game Programming"
   },
 
@@ -356,7 +356,7 @@ var originalModules = [
     description: "This module introduces students to the development of sales and marketing strategies, etc.",
     image: "images/year3/ism.svg",
     tags: ["sales-marketing"],
-    year: "3",
+    year: "2",
     aoi: "Infocomm Sales and Marketing"
   },
   {
@@ -376,7 +376,7 @@ var originalModules = [
     description: "This module focuses on the design & development of mobile applications.",
     image: "images/year3/mad.svg",
     tags: ["mobile-dev"],
-    year: "3",
+    year: "2",
     aoi: "Mobile Business Application"
   },
   {
@@ -414,7 +414,7 @@ var originalModules = [
     description: "This module provides students with skills to analyse, design and implement programmes involving data structures.",
     image: "images/year3/dsa.svg",
     tags: ["sol-arch"],
-    year: "3",
+    year: "2",
     aoi: "Solutions Architect"
   },
   {
@@ -432,7 +432,7 @@ var originalModules = [
     description: "This module trains students to incorporate security throughout the entire process of software development.",
     image: "images/year3/ssd.svg",
     tags: ["sol-arch"],
-    year: "3",
+    year: "2",
     aoi: "Solutions Architect"
   },
 
@@ -452,14 +452,29 @@ var originalModules = [
     description: "This module focuses on the processes and mechanisms by which new ideas and inventions can be commercialised in the market.",
     image: "images/year3/tns.svg",
     tags: ["techno"],
-    year: "3",
+    year: "2",
     aoi: "General"
   }
 ];
 
 // Returns all module information.
 function displayAllModules() {
+  // Create arrays for each years!
+  year1 = [];
+  year2 = [];
+  year3 = [];
+
   for (var i = 0; i < originalModules.length; i++) {
+    module = originalModules[i];
+    if (module.year == "1") {
+      year1.push(module);
+    }
+    else if (module.year == "2") {
+      year2.push(module);
+    }
+    else {
+      year3.push(module);
+    }
 
     // Create a div containing the contents of the front card
     var moduleFrontContentDiv = document.createElement("div");
@@ -472,7 +487,7 @@ function displayAllModules() {
 
     // Adding the title text
     var node = document.createElement("p");
-    var textnode = document.createTextNode(originalModules[i].name);
+    var textnode = document.createTextNode(module.name);
     node.appendChild(textnode);
     node.setAttribute("class", "module-name");
 
@@ -482,7 +497,7 @@ function displayAllModules() {
 
     // Adding a module image
     var img1 = new Image();
-    img1.src = originalModules[i].image;
+    img1.src = module.image;
     img1.setAttribute("class", "module-img");
 
     // Adding the title text div (moduleNameDiv) and module image to moduleFrontContentDiv
@@ -492,14 +507,17 @@ function displayAllModules() {
 
     // Adding a background image for the modules
     var img = new Image();
-    if (originalModules[i].year == "1") {
-      img.src = backgrounds[i % backgrounds.length].image;
+    if (year1.includes(module)) {
+      var index = year1.indexOf(module);
+      img.src = backgrounds[index % backgrounds.length].image;
     }
-    else if (originalModules[i].year == "2") {
-      img.src = backgrounds[(i - 3) % backgrounds.length].image;
+    else if (year2.includes(module)) {
+      var index = year2.indexOf(module);
+      img.src = backgrounds[index % backgrounds.length].image;
     }
     else {
-      img.src = backgrounds[(i - 3) % backgrounds.length].image;
+      var index = year3.indexOf(module);
+      img.src = backgrounds[index % backgrounds.length].image;
     }
     img.setAttribute("class", "module-bg");
 
@@ -511,7 +529,7 @@ function displayAllModules() {
     // var moduleTags = eachModule.tags;
 
     // Adding moduleFrontContentDiv and module image to moduleDiv
-    moduleDiv.setAttribute("class", "module-div " + originalModules[i].shortName);
+    moduleDiv.setAttribute("class", "module-div " + module.shortName);
     moduleDiv.appendChild(moduleFrontContentDiv);
     moduleDiv.appendChild(img)
 
@@ -522,7 +540,7 @@ function displayAllModules() {
 
     // Adding the title text
     var node1 = document.createElement("p");
-    var textnode1 = document.createTextNode(originalModules[i].name);
+    var textnode1 = document.createTextNode(module.name);
     node1.appendChild(textnode1);
     node1.setAttribute("class", "module-name-back");
 
@@ -531,9 +549,9 @@ function displayAllModules() {
     moduleNameDiv1.setAttribute("class", "module-name-back-div");
 
     // Adding the area of interest text
-    if (originalModules[i].aoi != null) {
+    if (module.aoi != null) {
       var node3 = document.createElement("p");
-      var textnode3 = document.createTextNode(originalModules[i].aoi);
+      var textnode3 = document.createTextNode(module.aoi);
       node3.appendChild(textnode3);
       node3.setAttribute ("class", "module-aoi");
 
@@ -542,7 +560,7 @@ function displayAllModules() {
 
     // Adding the description text
     var node2 = document.createElement("p");
-    var textnode2 = document.createTextNode(originalModules[i].description);
+    var textnode2 = document.createTextNode(module.description);
     node2.appendChild(textnode2);
     node2.setAttribute("class", "module-desc");
 
@@ -560,10 +578,10 @@ function displayAllModules() {
     moduleDiv.appendChild(moduleBackContentDiv);
 
     // ------------ APPEND WHOLE DIV CONTENT ------------
-    if (originalModules[i].year == "1") {
+    if (module.year == "1") {
       document.getElementById('year1-content').appendChild(moduleDiv);
     }
-    else if (originalModules[i].year == "2") {
+    else if (module.year == "2") {
       document.getElementById('year2-content').appendChild(moduleDiv);
     }
     else {
@@ -615,7 +633,7 @@ function filterButtons() {
 // Returns the modules that contain the relevant tags.
 function getModules(tags) {
 
-  // Store the modules that did not survive the purge.
+  // Store the modules that survived the purge.
   var filteredModules = [];
 
   // Purge all the modules with the wrong tags.
@@ -623,33 +641,32 @@ function getModules(tags) {
     var module = originalModules[i];
     var moduleTags = module.tags;
 
-    // Check whether the filter tags are a subset of module tags.
-    var isSubset = true;
+    // Add all modules with the selected tags into the filteredModules array.
     for (var j = 0; j < tags.length; j++) {
       var filterTag = tags[j];
-
-      if (!moduleTags.includes(filterTag)) {
-        isSubset = false;
+      if (moduleTags.includes(filterTag)) {
+        filteredModules.push(module);
         break;
       }
     }
-
-    // If they are not a subset, that means they did not survive the purge.
-    if (!isSubset) {
-      filteredModules.push(module);
-    }
   }
 
-  // Add class to those that are in filtered modules, and remove class from those that are not.
+  // Add class to those that are not in filtered modules, and remove class from those that are.
   for (var j = 0; j < originalModules.length; j++) {
     var module = originalModules[j];
     var card = $("." + module.shortName);
 
-    if (filteredModules.includes(module)) {
-      card.addClass('is-disabled');
+    // When no filters are selected, i.e. filteredModules = empty array, remove all 'is-disabled' classes.
+    if (filteredModules.length == 0) {
+          card.removeClass('is-disabled');
     }
     else {
-      card.removeClass('is-disabled');
+      if (!filteredModules.includes(module)) {
+        card.addClass('is-disabled');
+      }
+      else {
+        card.removeClass('is-disabled');
+      }
     }
   }
 
