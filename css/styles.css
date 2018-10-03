@@ -112,13 +112,13 @@ margin-bottom: 10px;
   background-color: #FF5A5F;
 }
 
-.filter-group {
+#filters {
   display: inline-block;
   padding-bottom: 8px;
   margin-bottom: 12px;
 }
 
-.filter-group h3 {
+#filters h3 {
   font-family: "Apercu-Bold";
   display: inline-block;
   margin-right: 20px;
@@ -126,14 +126,20 @@ margin-bottom: 10px;
   color: #FF5A5F;
 }
 
-.filter-group .btn-group {
+#filters .btn-group {
   display: inline-block;
   margin-right: 20px;
-
 }
 
 .btn-group {
   margin-top: 15px;
+}
+
+/* Disable Card for Filters */
+.is-disabled {
+  opacity: 0.3;
+  transition: all 0.5s;
+  pointer-events: none; /* is this necessary */
 }
 
 /* MODULES CONTENT */
@@ -213,7 +219,7 @@ margin-bottom: 10px;
   width: 260px;
   white-space: pre-line;
   margin: 0 auto;
-  margin-left: 11px;
+  margin-left: 18px;
   /* border: 1px solid red; */
 }
 
@@ -246,4 +252,5 @@ margin-bottom: 10px;
   text-align: center;
   font-style: italic;
   letter-spacing: 1px;
+  margin-top: 32px;
 }
