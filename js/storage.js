@@ -2,6 +2,7 @@ $(document).ready(function() {
     displayAllModules();
     flipCards();
     filterButtons();
+    scrollModules();
 });
 
 // All backgrounds
@@ -604,9 +605,7 @@ function flipCards() {
   });
 }
 
-// Slow scrolling and looping of each years' modules
-function scrollModules() {}
-
+// Activates the filter buttons on click.
 function filterButtons() {
   // Store all the tags that are clicked.
   var tags = [];
@@ -626,6 +625,19 @@ function filterButtons() {
     else {
       tags.push(this.id);
       getModules(tags);
+
+      // Set timer to 18 seconds
+      setTimeout(function() {
+        $target.removeClass("is-checked");
+        for (var i = 0; i < tags.length; i++) {
+          if (i > -1) {
+            tags.splice(i, 1);
+            console.log(".",tags);
+          }
+        }
+        console.log(tags);
+        getModules(tags);
+      }, 45000);
     }
   });
 }
@@ -671,4 +683,57 @@ function getModules(tags) {
   }
 
   return filteredModules;
+}
+
+// Slow scrolling and looping of each years' modules
+(function ($, undefined) {
+    $.fn.loopScroll = function (p_options) {
+        var options = $.extend({
+            direction: "right",
+            speed: 60
+        }, p_options);
+
+        return this.each(function () {
+            var obj = $(this).find(".module-container").end();
+            var mod_width = $(".module-div").width();
+
+            var start_x, end_x;
+            if (options.direction == "right") {
+              start_x = -mod_width;
+              end_x = 0;
+            }
+
+            var animate = function () {
+                var distance = Math.abs(end_x - parseInt(obj.css("left")));
+                // alert("animate " + obj.css("left") + "-> " + end_x + " " + distance);
+
+                //duration will be distance / speed
+                obj.animate({
+                    left: end_x
+                }, //scroll left
+                1000 * distance / options.speed, "linear",
+
+                function () {
+                    // scroll to start position
+                    obj.css("left", start_x);
+                    animate();
+                });
+            };
+
+            obj.find(".module-container").end().clone().appendTo(obj);
+            $(this).on("mouseover", function () {
+                obj.stop();
+            }).on("mouseout", function () {
+                animate(); // resume animation
+            });
+            obj.css("left", start_x);
+            animate(); // start animation
+        });
+    };
+}(jQuery));
+
+function scrollModules() {
+  $(".module-container").loopScroll({
+      speed: 20
+  });
 }
