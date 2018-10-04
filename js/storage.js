@@ -580,13 +580,13 @@ function displayAllModules() {
 
     // ------------ APPEND WHOLE DIV CONTENT ------------
     if (module.year == "1") {
-      document.getElementById('year1-content').appendChild(moduleDiv);
+      $("#year1-content").append(moduleDiv);
     }
     else if (module.year == "2") {
-      document.getElementById('year2-content').appendChild(moduleDiv);
+      $("#year2-content").append(moduleDiv);
     }
     else {
-      document.getElementById('year3-content').appendChild(moduleDiv);
+      $("#year3-content").append(moduleDiv);
     }
   }
 }
@@ -594,9 +594,9 @@ function displayAllModules() {
 // Flips each module card on click.
 function flipCards() {
   // Add "is-flipped" class to all cards that are clicked.
-  $('.module-div').click(function(event) {
+  $(".module-div").click(function(event) {
     var $target = $(event.currentTarget);
-    $target.toggleClass('is-flipped');
+    $target.toggleClass("is-flipped");
 
     // Set timer to 15 seconds
     setTimeout(function() {
@@ -611,11 +611,11 @@ function filterButtons() {
   var tags = [];
 
   // Toggle "is-checked" class to all buttons that are clicked.
-  $('.btn').click(function(event) {
+  $(".btn").click(function(event) {
     var $target = $(event.currentTarget);
-    $target.toggleClass('is-checked');
+    $target.toggleClass("is-checked");
 
-    if (!$target.is('.is-checked')) {
+    if (!$target.is(".is-checked")) {
       var index = tags.indexOf(this.id);
       if (index > -1) {
         tags.splice(index, 1);
@@ -632,10 +632,8 @@ function filterButtons() {
         for (var i = 0; i < tags.length; i++) {
           if (i > -1) {
             tags.splice(i, 1);
-            console.log(".",tags);
           }
         }
-        console.log(tags);
         getModules(tags);
       }, 45000);
     }
@@ -668,16 +666,16 @@ function getModules(tags) {
     var module = originalModules[j];
     var card = $("." + module.shortName);
 
-    // When no filters are selected, i.e. filteredModules = empty array, remove all 'is-disabled' classes.
+    // When no filters are selected, i.e. filteredModules = empty array, remove all "is-disabled" classes.
     if (filteredModules.length == 0) {
-          card.removeClass('is-disabled');
+          card.removeClass("is-disabled");
     }
     else {
       if (!filteredModules.includes(module)) {
-        card.addClass('is-disabled');
+        card.addClass("is-disabled");
       }
       else {
-        card.removeClass('is-disabled');
+        card.removeClass("is-disabled");
       }
     }
   }
@@ -685,7 +683,7 @@ function getModules(tags) {
   return filteredModules;
 }
 
-// Slow scrolling and looping of each years' modules
+// Slow scrolling and looping of each years" modules
 function setupModuleScrolling() {
   $("#year1-content").parent().scroll(onScroll);
   $("#year2-content").parent().scroll(onScroll);
@@ -722,8 +720,7 @@ function onScroll(e) {
   var container = $(e.target);
   var content = container.children().first();
 
-  // If the end of the container has been reached, then duplicate the
-  // appropriate element.
+  // If the end of the container has been reached, then duplicate the appropriate element.
   if (container.scrollLeft() >= containerWidth - 30) {
     var childNo = content.children().length - noOfModules;
     content.append(content.children().eq(childNo).clone());
