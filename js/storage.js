@@ -686,54 +686,43 @@ function getModules(tags) {
 }
 
 // Slow scrolling and looping of each years' modules
-(function ($, undefined) {
-    $.fn.loopScroll = function (p_options) {
-        var options = $.extend({
-            direction: "right",
-            speed: 60
-        }, p_options);
-
-        return this.each(function () {
-            var obj = $(this).find(".module-container").end();
-            var mod_width = $(".module-div").width();
-
-            var start_x, end_x;
-            if (options.direction == "right") {
-              start_x = -mod_width;
-              end_x = 0;
-            }
-
-            var animate = function () {
-                var distance = Math.abs(end_x - parseInt(obj.css("left")));
-                // alert("animate " + obj.css("left") + "-> " + end_x + " " + distance);
-
-                //duration will be distance / speed
-                obj.animate({
-                    left: end_x
-                }, //scroll left
-                1000 * distance / options.speed, "linear",
-
-                function () {
-                    // scroll to start position
-                    obj.css("left", start_x);
-                    animate();
-                });
-            };
-
-            obj.find(".module-container").end().clone().appendTo(obj);
-            $(this).on("mouseover", function () {
-                obj.stop();
-            }).on("mouseout", function () {
-                animate(); // resume animation
-            });
-            obj.css("left", start_x);
-            animate(); // start animation
-        });
-    };
-}(jQuery));
-
 function scrollModules() {
-  $(".module-container").loopScroll({
-      speed: 20
+  var noOfModules1 = year1.length;
+  var noOfModules2 = year2.length;
+  var noOfModules3 = year3.length;
+
+  var containerWidth1 = $(".module-div").width() * noOfModules1 - $(".module-container").width();
+  var containerWidth2 = $(".module-div").width() * noOfModules2 - $(".module-container").width();
+  var containerWidth3 = $(".module-div").width() * noOfModules3 - $(".module-container").width();
+
+  $.keyframe.define({
+    name: 'autoscroll-year1',
+    from: {
+        'transform': 'translate3d(0, 0, 0)'
+    },
+    to: {
+        'transform': 'translate3d(-' + containerWidth1 + 'px, 0, 0)'
+    }
   });
+
+  $.keyframe.define({
+    name: 'autoscroll-year2',
+    from: {
+        'transform': 'translate3d(0, 0, 0)'
+    },
+    to: {
+        'transform': 'translate3d(-' + containerWidth2 + 'px, 0, 0)'
+    }
+  });
+
+  $.keyframe.define({
+    name: 'autoscroll-year3',
+    from: {
+        'transform': 'translate3d(0, 0, 0)'
+    },
+    to: {
+        'transform': 'translate3d(-' + containerWidth3 + 'px, 0, 0)'
+    }
+  });
+
 }

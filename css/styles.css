@@ -139,16 +139,16 @@ margin-bottom: 10px;
 .is-disabled {
   opacity: 0.3;
   transition: all 0.5s;
-  pointer-events: none; /* is this necessary */
+  pointer-events: none;
 }
 
 /* MODULES CONTENT */
 .module-container {
-  overflow: auto;
   white-space: nowrap;
-  height: 290px;
+  max-height: 290px;
   margin-bottom: 5px;
-  overflow: scroll;
+  overflow-x: scroll;
+  overflow-y: hidden;
   left: 0;
   top: 0;
 }
@@ -190,7 +190,7 @@ margin-bottom: 10px;
 }
 
 .module-name-div {
-  width: 260px;
+  width: 270px;
   display: block;
   margin: 0 auto;
   margin: -24px 0;
@@ -221,7 +221,7 @@ margin-bottom: 10px;
   width: 260px;
   white-space: pre-line;
   margin: 0 auto;
-  margin-left: 18px;
+  margin-left: 14px;
   /* border: 1px solid red; */
 }
 
@@ -239,11 +239,11 @@ margin-bottom: 10px;
   white-space: pre-line;
   margin: 0 auto;
   margin-top: -28px;
-  margin-left: 23px;
+  margin-left: 24px;
 }
 
 .module-desc {
-  font-size: 20px;
+  font-size: 18px;
   color: #fff;
   margin-top: -8px;
 }
@@ -259,7 +259,20 @@ margin-bottom: 10px;
 
 /* Remove scrollbar space */
 ::-webkit-scrollbar {
-   width: 0px;
-   height: 0px;
+   width: 0;
+   height: 0;
    background: transparent;
+}
+
+/* AUTO SCROLL */
+#year1-content {
+  animation: autoscroll-year1 10.15s linear infinite;
+}
+
+#year2-content {
+  animation: autoscroll-year2 37s linear infinite;
+}
+
+#year3-content {
+  animation: autoscroll-year3 31s linear infinite;
 }
