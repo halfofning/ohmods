@@ -265,7 +265,7 @@ margin-bottom: 10px;
 }
 
 /* AUTO SCROLL */
-#year1-content {
+/* #year1-content {
   animation: autoscroll-year1 10.15s linear infinite;
 }
 
@@ -275,4 +275,4 @@ margin-bottom: 10px;
 
 #year3-content {
   animation: autoscroll-year3 31s linear infinite;
-}
+} */
