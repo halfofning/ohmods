@@ -687,53 +687,19 @@ function getModules(tags) {
 
 // Slow scrolling and looping of each years' modules
 function setupModuleScrolling() {
-  var noOfModules1 = year1.length;
-  var noOfModules2 = year2.length;
-  var noOfModules3 = year3.length;
-
-  var moduleDivWidth = $(".module-div").width();
-  var moduleContWidth = $(".module-container").width();
-
-  var containerWidth1 = moduleDivWidth * noOfModules1 - moduleContWidth;
-  var containerWidth2 = moduleDivWidth * noOfModules2 - moduleContWidth;
-  var containerWidth3 = moduleDivWidth * noOfModules3 - moduleContWidth;
-
   $("#year1-content").parent().scroll(onScroll);
   $("#year2-content").parent().scroll(onScroll);
   $("#year3-content").parent().scroll(onScroll);
+  updateScroll();
+}
 
-  // window.requestAnimationFrame(updateScroll);
+function updateScroll() {
+  window.requestAnimationFrame(updateScroll);
 
-  // $.keyframe.define({
-  //   name: 'autoscroll-year1',
-  //   from: {
-  //       'transform': 'translate3d(0, 0, 0)'
-  //   },
-  //   to: {
-  //       'transform': 'translate3d(-' + containerWidth1 + 'px, 0, 0)'
-  //   }
-  // });
-  //
-  // $.keyframe.define({
-  //   name: 'autoscroll-year2',
-  //   from: {
-  //       'transform': 'translate3d(0, 0, 0)'
-  //   },
-  //   to: {
-  //       'transform': 'translate3d(-' + containerWidth2 + 'px, 0, 0)'
-  //   }
-  // });
-  //
-  // $.keyframe.define({
-  //   name: 'autoscroll-year3',
-  //   from: {
-  //       'transform': 'translate3d(0, 0, 0)'
-  //   },
-  //   to: {
-  //       'transform': 'translate3d(-' + containerWidth3 + 'px, 0, 0)'
-  //   }
-  // });
-
+  var speed = 2;
+  $("#year1-content").parent().scrollLeft($("#year1-content").parent().scrollLeft() + speed);
+  $("#year2-content").parent().scrollLeft($("#year2-content").parent().scrollLeft() + speed);
+  $("#year3-content").parent().scrollLeft($("#year3-content").parent().scrollLeft() + speed);
 }
 
 function onScroll(e) {
@@ -742,7 +708,7 @@ function onScroll(e) {
   var noOfModules;
   switch ($(e.target).children().first().attr("id")) {
     case "year1-content":
-      noOfModules = year1.length;t
+      noOfModules = year1.length;
       break;
     case "year2-content":
       noOfModules = year2.length;
@@ -758,9 +724,9 @@ function onScroll(e) {
 
   // If the end of the container has been reached, then duplicate the
   // appropriate element.
-  if (container.scrollLeft() >= containerWidth) {
+  if (container.scrollLeft() >= containerWidth - 30) {
     var childNo = content.children().length - noOfModules;
     content.append(content.children().eq(childNo).clone());
+    flipCards();
   }
-  // console.log(container.scrollLeft, containerWidth)
 }
