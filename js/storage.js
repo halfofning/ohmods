@@ -720,10 +720,17 @@ function onScroll(e) {
   var container = $(e.target);
   var content = container.children().first();
 
-  // If the end of the container has been reached, then duplicate the appropriate element.
+  // If the start or end of the container has been reached, then duplicate the
+  // appropriate element.
   if (container.scrollLeft() >= containerWidth - 30) {
-    var childNo = content.children().length - noOfModules;
-    content.append(content.children().eq(childNo).clone());
+    content.append(content.children().first().clone());
+    content.children().first().remove();
+    container.scrollLeft(container.scrollLeft() - moduleDivWidth);
+    flipCards();
+  } else if (container.scrollLeft() <= 30) {
+    content.prepend(content.children().last().clone());
+    content.children().last().remove();
+    container.scrollLeft(container.scrollLeft() + moduleDivWidth);
     flipCards();
   }
 }
