@@ -22,6 +22,10 @@
 body {
   margin: 0 auto;
   font-family: "Apercu-Regular";
+  -ms-user-select: none;
+  user-select: none;
+  overflow: hidden;
+  touch-action: none;
 }
 
 #container {

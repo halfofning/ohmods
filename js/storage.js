@@ -598,6 +598,10 @@ function flipCards() {
     var $target = $(event.currentTarget);
     $target.toggleClass("is-flipped");
 
+    // if (!$target.is(".is-flipped")) {
+    //   $target.toggleClass("is-flipped");
+    // }
+
     // Set timer to 15 seconds
     setTimeout(function() {
       $target.removeClass("is-flipped");
@@ -720,7 +724,7 @@ function onScroll(e) {
   var container = $(e.target);
   var content = container.children().first();
 
-  // If the start or end of the container has been reached, then duplicate the
+  // If the start or end of the container has been reached, then duplicate the 
   // appropriate element.
   if (container.scrollLeft() >= containerWidth - 30) {
     content.append(content.children().first().clone());
