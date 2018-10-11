@@ -2,7 +2,7 @@ $(document).ready(function() {
     displayAllModules();
     flipCards();
     filterButtons();
-    setupModuleScrolling();
+    // setupModuleScrolling();
 });
 
 // All backgrounds
@@ -109,7 +109,7 @@ var originalModules = [
     shortName: "p1",
     description: "This module provides the opportunity to apply the knowledge and skills gained from the various modules, and explore topics in IT that they have a personal interest.",
     image: "images/year1/p1.svg",
-    tags: ["web-dev", "mobile-dev"],
+    tags: ["web-dev", "mobile-dev", "games-dev"],
     year: "1"
   },
   {
@@ -432,7 +432,7 @@ var originalModules = [
     shortName: "ssd",
     description: "This module trains students to incorporate security throughout the entire process of software development.",
     image: "images/year3/ssd.svg",
-    tags: ["sol-arch"],
+    tags: ["sol-arch", "info-sec"],
     year: "2",
     aoi: "Solutions Architect"
   },
@@ -452,7 +452,7 @@ var originalModules = [
     shortName: "tns",
     description: "This module focuses on the processes and mechanisms by which new ideas and inventions can be commercialised in the market.",
     image: "images/year3/tns.svg",
-    tags: ["techno"],
+    tags: ["techno", "sales-marketing"],
     year: "2",
     aoi: "General"
   }
@@ -525,10 +525,6 @@ function displayAllModules() {
     // Creating an individual div for each module
     var moduleDiv = document.createElement("div");
 
-    // Adding all tags classes to each module div
-    // var eachModule = originalModules[i];
-    // var moduleTags = eachModule.tags;
-
     // Adding moduleFrontContentDiv and module image to moduleDiv
     moduleDiv.setAttribute("class", "module-div " + module.shortName);
     moduleDiv.appendChild(moduleFrontContentDiv);
@@ -598,9 +594,12 @@ function flipCards() {
     var $target = $(event.currentTarget);
     $target.toggleClass("is-flipped");
 
-    // if (!$target.is(".is-flipped")) {
-    //   $target.toggleClass("is-flipped");
-    // }
+    var classes = [];
+    $($target).each(function() {
+      classes.push($(this).attr('class'));
+    });
+
+    console.log(classes);
 
     // Set timer to 15 seconds
     setTimeout(function() {
@@ -695,6 +694,7 @@ function setupModuleScrolling() {
   updateScroll();
 }
 
+// call this function whenever it's scrolled.
 function updateScroll() {
   window.requestAnimationFrame(updateScroll);
 
@@ -719,12 +719,13 @@ function onScroll(e) {
       noOfModules = year3.length;
       break;
   }
+
   var containerWidth = moduleDivWidth * noOfModules - moduleContWidth;
 
   var container = $(e.target);
   var content = container.children().first();
 
-  // If the start or end of the container has been reached, then duplicate the 
+  // If the start or end of the container has been reached, then duplicate the
   // appropriate element.
   if (container.scrollLeft() >= containerWidth - 30) {
     content.append(content.children().first().clone());
