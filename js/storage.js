@@ -632,17 +632,10 @@ function flipCards() {
   $(".module-div").unbind("click");
 
   $(".module-div").click(function(event) {
-    console.log("woah");
-
     var $target = $(event.currentTarget);
     $target.toggleClass("is-flipped");
 
-    var classes = [];
-    $($target).each(function() {
-      classes.push($(this).attr("class"));
-    });
-
-    // Set timer to 15 seconds
+    // Set timer to 18 seconds
     setTimeout(function() {
       $target.removeClass("is-flipped");
     }, 18000);
@@ -725,57 +718,63 @@ function getModules(tags) {
 
 // Slow scrolling and looping of each years" modules
 function setupModuleScrolling() {
-  $("#year1-content")
-    .parent()
-    .scroll(onScroll);
-  $("#year2-content")
-    .parent()
-    .scroll(onScroll);
-  $("#year3-content")
-    .parent()
-    .scroll(onScroll);
+  $("#year1-content").parent().scroll(onScroll);
+  $("#year2-content").parent().scroll(onScroll);
+  $("#year3-content").parent().scroll(onScroll);
+
   updateScroll();
 }
 
-// call this function whenever it's scrolled.
+var speed1 = 2;
+var speed2 = 2;
+var speed3 = 2;
+
+// Call this function whenever it's scrolled.
 function updateScroll() {
   window.requestAnimationFrame(updateScroll);
 
-  var speed = 2;
+  $(".module-div").click(function(event) {
+    var $target = $(event.currentTarget);
+    if ($target.hasClass("is-flipped")) {
+      switch ($target.parent().attr("id"))
+      {
+        case "year1-content":
+          speed1 = 0;
+          break;
+        case "year2-content":
+          speed2 = 0;
+          break;
+        case "year3-content":
+          speed3 = 0;
+          break;
+      }
+    }
 
-  $("#year1-content")
-    .parent()
-    .scrollLeft(
-      $("#year1-content")
-        .parent()
-        .scrollLeft() + speed,
-    );
-  $("#year2-content")
-    .parent()
-    .scrollLeft(
-      $("#year2-content")
-        .parent()
-        .scrollLeft() + speed,
-    );
-  $("#year3-content")
-    .parent()
-    .scrollLeft(
-      $("#year3-content")
-        .parent()
-        .scrollLeft() + speed,
-    );
+    if (!$target.parent().children().hasClass("is-flipped")) {
+      console.log ($target.parent().children().hasClass("is-flipped"));
+      speed1 = 2;
+      speed2 = 2;
+      speed3 = 2;
+    }
+  });
+
+  $("#year1-content").parent().scrollLeft(
+    $("#year1-content").parent().scrollLeft() + speed1,
+  );
+  $("#year2-content").parent().scrollLeft(
+    $("#year2-content").parent().scrollLeft() + speed2,
+  );
+  $("#year3-content").parent().scrollLeft(
+    $("#year3-content").parent().scrollLeft() + speed3,
+  );
 }
 
 function onScroll(e) {
   var moduleDivWidth = $(".module-div").width();
   var moduleContWidth = $(".module-container").width();
   var noOfModules;
-  switch (
-    $(e.target)
-      .children()
-      .first()
-      .attr("id")
-  ) {
+  switch ($(e.target).children().first().attr("id"))
+  {
     case "year1-content":
       noOfModules = year1.length;
       break;
@@ -796,28 +795,16 @@ function onScroll(e) {
   // appropriate element.
   if (container.scrollLeft() >= containerWidth - 30) {
     content.append(
-      content
-        .children()
-        .first()
-        .clone(),
+      content.children().first().clone(),
     );
-    content
-      .children()
-      .first()
-      .remove();
+    content.children().first().remove();
     container.scrollLeft(container.scrollLeft() - moduleDivWidth);
     flipCards();
   } else if (container.scrollLeft() <= 30) {
     content.prepend(
-      content
-        .children()
-        .last()
-        .clone(),
+      content.children().last().clone(),
     );
-    content
-      .children()
-      .last()
-      .remove();
+    content.children().last().remove();
     container.scrollLeft(container.scrollLeft() + moduleDivWidth);
     flipCards();
   }
