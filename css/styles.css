@@ -9,12 +9,15 @@
 }
 
 /* HTML and BODY */
+html, body {
+  overflow: hidden;
+}
+
 body {
   margin: 0 auto;
   font-family: "Apercu-Regular";
+  /* -ms-touch-action: none; */
   -ms-user-select: none;
-  overflow: hidden;
-  -ms-touch-action: none;
 }
 
 #container {
@@ -62,7 +65,7 @@ body {
 
 #title h1 {
   font-family: "Apercu-Bold";
-  font-size: 135px;
+  font-size: 125px;
   margin-bottom: 0;
   letter-spacing: 1px;
   line-height: 145px;
@@ -71,11 +74,11 @@ body {
 }
 
 #title h3 {
-font-weight: 100;
-text-align: left;
-margin-top: -15px;
-font-size: 35px;
-margin-bottom: 10px;
+  font-weight: 100;
+  text-align: left;
+  margin-top: -15px;
+  font-size: 35px;
+  margin-bottom: 10px;
 }
 
 /* FILTER BUTTONS */
@@ -138,7 +141,7 @@ margin-bottom: 10px;
 /* MODULES CONTENT */
 .module-container {
   white-space: nowrap;
-  max-height: 290px;
+  max-height: 400px;
   margin-bottom: 5px;
   overflow-x: scroll;
   overflow-y: hidden;

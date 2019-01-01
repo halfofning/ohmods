@@ -118,7 +118,7 @@ var originalModules = [
     description:
       "This module provides the opportunity to apply the knowledge and skills gained from the various modules, and explore topics in IT that they have a personal interest.",
     image: "images/year1/p1.svg",
-    tags: ["web-dev", "mobile-dev", "games-dev"],
+    tags: ["web-dev", "mobile-dev", "games-dev", "sales-marketing", "data-analytics"],
     year: "1",
   },
   {
@@ -130,6 +130,16 @@ var originalModules = [
     tags: ["web-dev", "games-dev"],
     year: "1",
   },
+
+  // {
+  //   name: "IS Modules",
+  //   shortName: "is1",
+  //   description:
+  //   "These modules aim to develop communication skills, enhance creativity and critical thinking about community issues. These include *Sports and Wellness, *Innovation Toolkit, *Communication and Contemporary Issues.",
+  //   image: "images/year1/is.svg",
+  //   tags: ["personal-dev"],
+  //   year: "1",
+  // },
 
   // YEAR 2 CORE MODULES
   {
@@ -183,7 +193,7 @@ var originalModules = [
     description:
       "Students may choose to undertake a real life IT project, a competition-based project or a research and development project.",
     image: "images/year2/p2.svg",
-    tags: ["web-dev", "mobile-dev", "games-dev"],
+    tags: ["web-dev", "mobile-dev", "games-dev", "sales-marketing", "data-analytics"],
     year: "2",
   },
   {
@@ -195,6 +205,15 @@ var originalModules = [
     tags: ["web-dev", "mobile-dev"],
     year: "2",
   },
+  // {
+  //   name: "IS Modules",
+  //   shortName: "is2",
+  //   description:
+  //     "??",
+  //   image: "images/year2/is.svg",
+  //   tags: ["personal-dev"],
+  //   year: "2",
+  // },
 
   // YEAR 2 AND YEAR 3 ELECTIVES
   // AREA OF INTEREST: BUSINESS AND DATA ANALYTICS
@@ -297,7 +316,7 @@ var originalModules = [
     description:
       "This module equips students with the skills for modelling and analysing business processes.",
     image: "images/year3/bpmd.svg",
-    tags: ["etp-sol"],
+    tags: ["etp-sol", "businessIT"],
     year: "3",
     aoi: "Enterprise Solutioning",
   },
@@ -307,7 +326,7 @@ var originalModules = [
     description:
       "This module provides the knowledge of Customer Experience Management as a business strategy.",
     image: "images/year3/cxm.svg",
-    tags: ["etp-sol"],
+    tags: ["etp-sol", "businessIT"],
     year: "2",
     aoi: "Enterprise Solutioning",
   },
@@ -317,7 +336,7 @@ var originalModules = [
     description:
       "This module educates students on the importance of backend cloud-based enterprise business systems.",
     image: "images/year3/ebs.svg",
-    tags: ["etp-sol"],
+    tags: ["etp-sol", "businessIT"],
     year: "3",
     aoi: "Enterprise Solutioning",
   },
@@ -381,7 +400,7 @@ var originalModules = [
     description:
       "Students will be introduced to soft skills in understanding customer biases and concerns, etc.",
     image: "images/year3/cdn.svg",
-    tags: ["sales-marketing"],
+    tags: ["sales-marketing", "businesIT"],
     year: "3",
     aoi: "Infocomm Sales and Marketing",
   },
@@ -391,7 +410,7 @@ var originalModules = [
     description:
       "This module introduces students to the development of sales and marketing strategies, etc.",
     image: "images/year3/ism.svg",
-    tags: ["sales-marketing"],
+    tags: ["sales-marketing", "businesIT"],
     year: "2",
     aoi: "Infocomm Sales and Marketing",
   },
@@ -399,9 +418,9 @@ var originalModules = [
     name: "Infocomm Sales Life Cycle Management",
     shortName: "isc",
     description:
-      "This module introduces students to a customer’s ICT purchase decision making process, etc.",
+      "This module introduces students to a customer's ICT purchase decision making process, etc.",
     image: "images/year3/isc.svg",
-    tags: ["sales-marketing"],
+    tags: ["sales-marketing", "businesIT"],
     year: "3",
     aoi: "Infocomm Sales and Marketing",
   },
@@ -497,7 +516,7 @@ var originalModules = [
     description:
       "This module focuses on the processes and mechanisms by which new ideas and inventions can be commercialised in the market.",
     image: "images/year3/tns.svg",
-    tags: ["techno", "sales-marketing"],
+    tags: ["techno", "sales-marketing", "businessIT"],
     year: "2",
     aoi: "General",
   },
